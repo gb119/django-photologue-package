@@ -1,0 +1,51 @@
+{% set name = "django-photologue" %}
+{% set version = "3.15.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: a630d773a9cd3f5e6941ff9115bd78bca95fd9e80f44ebda2e6f6883cf3e88b0
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - django-sortedm2m >=3.1.1
+    - exifread >=2.1.2
+    - pillow >=6.0.0
+    - pip
+    - python
+  run:
+    - django-sortedm2m >=3.1.1
+    - exifread >=2.1.2
+    - pillow >=6.0.0
+    - python
+
+test:
+  imports:
+    - photologue
+    - photologue.management
+    - photologue.management.commands
+    - photologue.migrations
+    - photologue.templatetags
+    - photologue.tests
+    - photologue.utils
+    - scripts
+
+about:
+  home: "https://github.com/richardbarran/django-photologue"
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: "Powerful image management for the Django web framework."
+  doc_url: https://django-photologue.readthedocs.io/en/stable/
+  dev_url: https://github.com/richardbarran/django-photologue
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
