@@ -26,17 +26,6 @@ requirements:
     - pillow >=6.0.0
     - python
 
-test:
-  imports:
-    - photologue
-    - photologue.management
-    - photologue.management.commands
-    - photologue.migrations
-    - photologue.templatetags
-    - photologue.tests
-    - photologue.utils
-    - scripts
-
 about:
   home: "https://github.com/richardbarran/django-photologue"
   license: BSD
