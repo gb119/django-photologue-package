@@ -1,5 +1,5 @@
 {% set name = "django-photologue" %}
-{% set version = "3.15.1" %}
+{% set version = "3.17" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,24 +7,25 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: a630d773a9cd3f5e6941ff9115bd78bca95fd9e80f44ebda2e6f6883cf3e88b0
+  sha256: af49cdaa7b428b7cb53e1fa06e66d788866512737ca56e98634be3ef24cdefb4
 
 build:
   number: 0
+  noarh: pytthon
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - django-sortedm2m >=3.1.1
     - exifread >=2.1.2
-    - pillow >=6.0.0
+    - pillow >=10.0.0
     - pip
-    - python
+    - python >=3.8
   run:
     - django-sortedm2m >=3.1.1
     - exifread >=2.1.2
-    - pillow >=6.0.0
-    - python
+    - pillow >=10.0.0
+    - python >=3.8
 
 about:
   home: "https://github.com/richardbarran/django-photologue"
