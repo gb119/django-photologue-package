@@ -1,5 +1,5 @@
 {% set name = "django-photologue" %}
-{% set version = "3.17" %}
+{% set version = "3.18" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: af49cdaa7b428b7cb53e1fa06e66d788866512737ca56e98634be3ef24cdefb4
+  sha256: 1ae8b11c992329b6bdb75084b05d833ecbd52a8e27621a2822a6ac439cafaec6
 
 build:
   number: 1
